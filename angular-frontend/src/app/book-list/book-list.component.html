@@ -1,0 +1,17 @@
+<h2> Employee List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Book Name</th>
+            <th> Author </th>
+            <th> Price </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let book of books" >
+            <td> {{ book.bookName }} </td>
+            <td> {{ book.author }} </td>
+            <td> {{ book.price }} </td>
+        </tr>
+    </tbody>
+</table>
