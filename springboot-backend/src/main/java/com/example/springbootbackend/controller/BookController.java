@@ -20,4 +20,10 @@ public class BookController {
         return bookRepository.findAll();
     }
 
+    // Add book
+    @PostMapping("/books")
+    public Book addBook(@RequestBody Book book) {
+        return bookRepository.save(book);
+    }
+
 }
