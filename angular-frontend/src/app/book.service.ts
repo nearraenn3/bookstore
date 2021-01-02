@@ -28,4 +28,8 @@ export class BookService {
     return this.httpClient.put(`${this.baseUrl}/${id}`, book);
   }
 
+  deleteBook(id: number): Observable<Object> {
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+  }
+
 }

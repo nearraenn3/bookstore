@@ -29,4 +29,11 @@ export class BookListComponent implements OnInit {
     this.router.navigate(['update-book', id]);
   }
 
+  deleteBook(id: number) {
+    this.bookService.deleteBook(id).subscribe(data => {
+      console.log(data);
+      this.getBookList();
+    }, error => console.log(error));
+  }
+
 }
