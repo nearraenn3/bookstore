@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Book } from '../book';
 import { BookService } from '../book.service';
 
@@ -11,7 +12,8 @@ export class BookListComponent implements OnInit {
 
   books: Book[];
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getBookList();
@@ -21,6 +23,10 @@ export class BookListComponent implements OnInit {
     this.bookService.getBookList().subscribe(data => {
       this.books = data;
     });
+  }
+
+  updateBook(id: number) {
+    this.router.navigate(['update-book', id]);
   }
 
 }
